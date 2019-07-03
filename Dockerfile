@@ -22,4 +22,8 @@ RUN \
     make && \
   pip install -r ./requirements.txt && \
   apk del dev-dependencies && \
-  rm -f ./requirements.txt
+  rm -f ./requirements.txt && \
+  adduser -S data
+
+USER data
+
