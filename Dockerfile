@@ -3,6 +3,7 @@ FROM hashicorp/packer:1.4.2
 MAINTAINER Krzysztof Magosa <krzysztof@magosa.pl>
 
 ADD ./requirements.txt ./
+ADD ./entrypoint.sh /bin/
 
 RUN \
   apk add --no-cache \
@@ -26,4 +27,5 @@ RUN \
   adduser -S data
 
 USER data
+ENTRYPOINT ["/bin/entrypoint.sh"]
 
