@@ -26,6 +26,8 @@ RUN \
   rm -f ./requirements.txt && \
   adduser -S app -h /home
 
+ADD --chown=app:nogroup ./known_hosts /home/.ssh/known_hosts
+
 USER app
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
