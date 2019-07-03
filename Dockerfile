@@ -24,8 +24,8 @@ RUN \
   pip install -r ./requirements.txt && \
   apk del dev-dependencies && \
   rm -f ./requirements.txt && \
-  adduser -S data
+  adduser -S app -h /home
 
-USER data
+USER app
 ENTRYPOINT ["/bin/entrypoint.sh"]
 
