@@ -8,7 +8,10 @@ RUN \
   apk add --no-cache \
     python2 \
     libffi \
-    openssl && \
+    openssl \
+    openssh \
+    coreutils \
+    tar && \
   apk add --no-cache --virtual dev-dependencies \
     python2-dev \
     py-pip \
