@@ -1,6 +1,7 @@
 FROM hashicorp/packer:1.4.2
 
 MAINTAINER Krzysztof Magosa <krzysztof@magosa.pl>
+LABEL org.label-schema.vcs-ref="https://github.com/krzysztof-magosa/docker-packer-ansible"
 
 ADD ./requirements.txt ./
 ADD ./entrypoint.sh /bin/
