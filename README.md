@@ -28,6 +28,12 @@ in case you want e.g. to pass SSH private key. I recommend you use `-w /data` al
 Packer may need credentials to access Cloud resources.
 You may either use `-e NAME=VALUE` or `--env-file FILE` to pass them via environment variables as required.
 
+## SSH host keys
+If your roles are located within SSH repositories and not available via Ansible Galaxy, accepting host keys
+may be required. For convenience image comes with GitHub, GitLab and BitBucket added to known hosts.
+In case you use different Git hosting, consider using `-ti` flags so git can interactively ask you about
+accepting host key, or use volume providing known hosts including your servers (e.g. `-v $HOME/.ssh/known_hosts:/home/.ssh/known_hosts`).
+
 ## Usage
 Building image:
 ```
