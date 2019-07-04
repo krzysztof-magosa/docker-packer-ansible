@@ -12,7 +12,8 @@ RUN \
     openssl \
     openssh \
     coreutils \
-    tar && \
+    tar \
+    docker && \
   apk add --no-cache --virtual dev-dependencies \
     python2-dev \
     py-pip \
@@ -24,9 +25,9 @@ RUN \
   pip install -r ./requirements.txt && \
   apk del dev-dependencies && \
   rm -f ./requirements.txt && \
-  adduser -S app -h /home
+  adduser -S app -G root -h /home
 
-ADD --chown=app:nogroup ./known_hosts /home/.ssh/known_hosts
+ADD --chown=app:root ./known_hosts /home/.ssh/known_hosts
 
 USER app
 ENTRYPOINT ["/bin/entrypoint.sh"]
