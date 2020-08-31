@@ -1,4 +1,4 @@
-FROM hashicorp/packer:1.4.3
+FROM hashicorp/packer:1.6.2
 
 MAINTAINER Krzysztof Magosa <krzysztof@magosa.pl>
 
